@@ -1,3 +1,12 @@
+function activeLink() {
+  var path = window.location.pathname;
+  var navLinks = document.querySelectorAll(".header-menu li a");
+  navLinks.forEach(function (link) {
+    if (link.getAttribute("href") === path.split("/").pop()) {
+      link.classList.add("active-link");
+    }
+  });
+}
 function sidebar() {
   const sidebar = document.querySelector(".header-menu");
   sidebar.classList.toggle("opensidebar");
@@ -172,5 +181,6 @@ function scrollevents() {
     "samanim3"
   );
 }
+activeLink();
 textEffect();
 scrollevents();

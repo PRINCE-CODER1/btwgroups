@@ -1,3 +1,19 @@
+@font-face {
+  font-family: regu;
+  src: url("../font-family/Noto_Sans/NotoSans-Regular.ttf");
+}
+@font-face {
+  font-family: medu;
+  src: url("../font-family/Noto_Sans/NotoSans-Medium.ttf");
+}
+@font-face {
+  font-family: boldu;
+  src: url("../font-family/Noto_Sans/NotoSans-Bold.ttf");
+}
+@font-face {
+  font-family: blackia;
+  src: url("../font-family/Noto_Sans/NotoSans-Black.ttf");
+}
 * {
   margin: 0;
   padding: 0;
@@ -7,23 +23,47 @@ html,
 body {
   width: 100%;
   height: 100%;
+  font-family: regu;
+}
+::selection {
+  background: rgba(189, 188, 188, 0.394);
+  color: #000;
 }
 .main {
   position: relative;
   overflow: hidden;
 }
 .main_anchor {
+  position: relative;
+  overflow: hidden;
   padding: 1vw 2.3vw;
-  background: #ed736a;
+  background: #f3663f;
   text-decoration: none;
-  border: 1px solid #ed736a;
   transition: all 0.3s;
+  font-family: boldu;
+  z-index: 0;
   color: #fff;
+  border-radius: 50px;
 }
 .main_anchor:hover {
-  background: #fff;
-  color: #ed736a;
-  border: 1px solid #ed736a;
+  color: #fff;
+}
+.main_anchor:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  z-index: -1;
+  height: 0%;
+  background: #24c373;
+  transition: all 0.3s;
+}
+.main_anchor:hover:after {
+  height: 100%;
+  border-radius: 0px;
 }
 header {
   position: relative;
@@ -66,6 +106,9 @@ header {
   color: #fff;
   display: block;
   padding: 0.3vw 1.2vw;
+}
+header ul li a.active-link {
+  border-bottom: 5px solid #f3663f;
 }
 #side-bar {
   display: none;
@@ -138,6 +181,9 @@ header {
 /* About-section start here */
 /* About-section start here */
 /* About-section start here */
+.about-cnt h1 {
+  font-family: boldu;
+}
 .about-sec {
   position: relative;
 }
@@ -180,15 +226,24 @@ header {
   overflow: hidden;
   box-shadow: 0 0 6px rgba(113, 112, 112, 0.6);
 }
+.team-img:hover img {
+  scale: 1.2;
+}
 .team-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all 0.5s;
+}
+.team-heading h1 {
+  font-size: 3vw;
 }
 .team-heading {
   display: inline-block;
   padding: 0.5vw 1vw;
-  border-left: 5px solid #ed736a;
+  border-left: 5px solid #f3663f;
+  font-family: boldu;
+  text-transform: capitalize;
 }
 .our-works {
   position: relative;
@@ -264,8 +319,12 @@ header {
     transform: rotate(0deg);
   }
 }
-.card,
-.card img {
+.man-txt h1 {
+  font-family: boldu;
+  text-transform: uppercase;
+}
+.card-copy,
+.card-copy img {
   border-radius: 20px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
 }
@@ -279,7 +338,7 @@ footer {
   font-size: 3vw;
 }
 .quick-links h3 {
-  border-left: 5px solid #ed736a;
+  border-left: 5px solid #f3663f;
   padding-left: 1vw;
 }
 .quick-links li {
@@ -294,7 +353,7 @@ footer {
   border-bottom: 1px solid rgba(189, 188, 188, 0.545);
 }
 .quick-links li a:hover {
-  color: #ed736a;
+  color: #f3663f;
 }
 .footer-social-style li {
   list-style-type: none;
@@ -307,7 +366,7 @@ footer {
   width: 50px;
   height: 50px;
   color: #fff;
-  background: #ed736a;
+  background: #f3663f;
   transition: 0.2s;
   border-radius: 50%;
 }
@@ -325,8 +384,215 @@ footer {
   justify-content: end;
 }
 .copyright-text span {
-  color: #ed736a;
+  color: #f3663f;
 }
+
+/* <=================================== OUR TEAM PAGE ===================================> */
+/* <=================================== OUR TEAM PAGE ===================================> */
+/* <=================================== OUR TEAM PAGE ===================================> */
+/* <=================================== OUR TEAM PAGE ===================================> */
+/* <=================================== OUR TEAM PAGE ===================================> */
+
+.our-team-page {
+  position: relative;
+  height: 500px;
+  background-image: url("../images/our-management.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+.our-team-page:after {
+  content: "";
+  position: absolute;
+  background-color: rgba(42, 42, 42, 0.55);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.team-page {
+  height: 100%;
+}
+.team-page .team-div {
+  height: 100%;
+}
+.team-span-text a {
+  font-family: medu;
+  color: #fff;
+  text-decoration: none;
+}
+.breadcrumb i {
+  color: #fff;
+}
+.breadcrumb-item.active {
+  font-family: medu;
+  color: #f3663f;
+}
+.team-span-text h1 {
+  display: inline-block;
+  padding: 1vw;
+  border-radius: 10px;
+  font-family: boldu;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: capitalize;
+  background-color: #5d5c5b86;
+}
+.manage-para-text p {
+  font-family: regu;
+  text-transform: capitalize;
+  line-height: 30px;
+}
+.subtitle-heading h3 {
+  font-weight: 100;
+  font-size: 2.3vw;
+  font-family: regu;
+}
+.subtitle-heading span {
+  font-family: blackia;
+}
+.card-style3 {
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.card-style3:hover {
+  box-shadow: 0 0 10px rgba(169, 167, 167, 0.53);
+}
+.card-style3 .social-icon-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 350px;
+}
+.card-style3 .social-icon-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-body {
+  font-family: regu;
+}
+.card-body h3 {
+  font-family: boldu;
+}
+.card-body span {
+  color: #24c373;
+}
+
+/* <=================================== OUR Work PAGE ===================================> */
+/* <=================================== OUR Work PAGE ===================================> */
+/* <=================================== OUR Work PAGE ===================================> */
+/* <=================================== OUR Work PAGE ===================================> */
+/* <=================================== OUR Work PAGE ===================================> */
+.our-work-page {
+  position: relative;
+  height: 500px;
+  background-image: url("../images/bg-03.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+.our-work-page:after {
+  content: "";
+  position: absolute;
+  background-color: rgba(42, 42, 42, 0.55);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.work-page {
+  height: 100%;
+}
+.work-page .work-div {
+  height: 100%;
+}
+.work-span-text a {
+  font-family: medu;
+  color: #fff;
+  text-decoration: none;
+}
+.work-span-text h1 {
+  display: inline-block;
+  padding: 1vw;
+  border-radius: 10px;
+  font-family: boldu;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: capitalize;
+  background-color: #5d5c5b86;
+}
+.circle-text-logic {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle-text-heading {
+  font-family: boldu;
+  font-size: 2.7vw;
+  text-decoration: underline;
+}
+.circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  gap: 4vw;
+}
+.circle-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.circle-img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.circle ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #24c37440;
+  border-radius: 5px;
+  border: 1px solid #24c373;
+  box-shadow: 0 0 5px rgba(56, 55, 55, 0.506);
+  padding: 1vw;
+  margin-bottom: 0;
+}
+.circle ul li {
+  list-style: none;
+  color: #000;
+  padding: 1vw;
+  transition: 0.2s;
+}
+.circle ul li:hover p {
+  scale: 1.04;
+}
+
+.circle-text p {
+  display: flex;
+  gap: 1vw;
+  margin: 0;
+  font-family: medu;
+  border-radius: 2px;
+  padding: 0.2vw;
+}
+.circle-text i {
+  color: #f3663f;
+}
+
+/* Media Queries */
+/* Media Queries */
+/* Media Queries */
+
 @media (max-width: 1244px) {
   .about-img02 {
     position: absolute;
@@ -381,7 +647,7 @@ footer {
     transition: all 0.2s;
   }
   .header .header-menu li a:hover {
-    background: #ed736a;
+    background: #f3663f;
     color: #fff;
   }
   .about-img02 {
